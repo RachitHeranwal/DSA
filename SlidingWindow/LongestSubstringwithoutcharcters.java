@@ -6,7 +6,8 @@ import java.util.Set;
 public class LongestSubstringwithoutcharcters {
     public int lengthOfLongestSubstring(String s) {
       Set<Character> set = new HashSet<>();
-      int l = 0, r= 0;
+      int l = 0,
+              r= 0;
       int maxLength = 0;
 
       while(r < s.length()){
