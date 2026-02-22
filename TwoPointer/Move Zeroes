@@ -1,0 +1,38 @@
+// My code 
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int slow = 0;
+        int k = 0;
+        
+        for(int fast = 0; fast < nums.length; fast++){
+            if(nums[fast] != 0){
+                nums[slow] = nums[fast];
+                slow++;
+            }else{
+                k++;
+            }
+        }
+
+        for(int i = nums.length - k; i < nums.length; i++){
+            nums[i] = 0;
+        }
+    }
+}
+
+// and better code
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int write = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != 0){
+                if(write != i){
+                    nums[write] = nums[i];
+                    nums[i] = 0;
+                }
+                write++;
+            }
+        }
+    }
+}
